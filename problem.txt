@@ -1,0 +1,1587 @@
+presto,ydb,cassandra
+
+跑storm的时候
+
+ Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Exception in thread "main" java.lang.ExceptionInInitializerError
+        at org.apache.storm.config$read_storm_config.invoke(config.clj:78)
+        at org.apache.storm.config$fn__906.invoke(config.clj:100)
+        at org.apache.storm.config__init.load(Unknown Source)
+        at org.apache.storm.config__init.<clinit>(Unknown Source)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:348)
+        at clojure.lang.RT.classForName(RT.java:2154)
+        at clojure.lang.RT.classForName(RT.java:2163)
+        at clojure.lang.RT.loadClassForName(RT.java:2182)
+        at clojure.lang.RT.load(RT.java:436)
+        at clojure.lang.RT.load(RT.java:412)
+        at clojure.core$load$fn__5448.invoke(core.clj:5866)
+        at clojure.core$load.doInvoke(core.clj:5865)
+        at clojure.lang.RestFn.invoke(RestFn.java:408)
+        at clojure.core$load_one.invoke(core.clj:5671)
+        at clojure.core$load_lib$fn__5397.invoke(core.clj:5711)
+        at clojure.core$load_lib.doInvoke(core.clj:5710)
+        at clojure.lang.RestFn.applyTo(RestFn.java:142)
+        at clojure.core$apply.invoke(core.clj:632)
+        at clojure.core$load_libs.doInvoke(core.clj:5753)
+        at clojure.lang.RestFn.applyTo(RestFn.java:137)
+        at clojure.core$apply.invoke(core.clj:634)
+        at clojure.core$use.doInvoke(core.clj:5843)
+        at clojure.lang.RestFn.invoke(RestFn.java:408)
+        at org.apache.storm.command.config_value$loading__5340__auto____12530.invoke(config_value.clj:16)
+        at org.apache.storm.command.config_value__init.load(Unknown Source)
+        at org.apache.storm.command.config_value__init.<clinit>(Unknown Source)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:348)
+        at clojure.lang.RT.classForName(RT.java:2154)
+        at clojure.lang.RT.classForName(RT.java:2163)
+        at clojure.lang.RT.loadClassForName(RT.java:2182)
+        at clojure.lang.RT.load(RT.java:436)
+        at clojure.lang.RT.load(RT.java:412)
+        at clojure.core$load$fn__5448.invoke(core.clj:5866)
+        at clojure.core$load.doInvoke(core.clj:5865)
+        at clojure.lang.RestFn.invoke(RestFn.java:408)
+        at clojure.lang.Var.invoke(Var.java:379)
+        at org.apache.storm.command.config_value.<clinit>(Unknown Source)
+Caused by: java.lang.RuntimeException: java.io.IOException: Found multiple defaults.yaml resources. You're probably bundling the Storm jars with your topology jar. [jar:file:/usr/local/storma.jar!/defaults.yaml, jar:file:/usr/local/storm/lib/storm-core-1.2.2.jar!/defaults.yaml]
+        at org.apache.storm.utils.Utils.findAndReadConfigFile(Utils.java:384)
+        at org.apache.storm.utils.Utils.readDefaultConfig(Utils.java:428)
+        at org.apache.storm.utils.Utils.readStormConfig(Utils.java:464)
+        at org.apache.storm.utils.Utils.<clinit>(Utils.java:178)
+        ... 39 more
+Caused by: java.io.IOException: Found multiple defaults.yaml resources. You're probably bundling the Storm jars with your topology jar. [jar:file:/usr/local/storma.jar!/defaults.yaml, jar:file:/usr/local/storm/lib/storm-core-1.2.2.jar!/defaults.yaml]
+        at org.apache.storm.utils.Utils.getConfigFileInputStream(Utils.java:410)
+        at org.apache.storm.utils.Utils.findAndReadConfigFile(Utils.java:363)
+        ... 42 more
+Running: /usr/local/jdk1.8/bin/java -client -Ddaemon.name= -Dstorm.options= -Dstorm.home=/usr/local/storm -Dstorm.log.dir=/usr/local/storm/logs -Djava.library.path= -Dstorm.conf.file= -cp /usr/local/storm/*:/usr/local/storm/lib/*:/usr/local/storm/extlib/*:/usr/local/storma.jar:/usr/local/storm/conf:/usr/local/storm/bin -Dstorm.jar=/usr/local/storma.jar -Dstorm.dependency.jars= -Dstorm.dependency.artifacts={} cn.xpleaf.bigdata.storm.statistic.StatisticTopology
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/storm/lib/log4j-slf4j-impl-2.8.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/storma.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Exception in thread "main" java.lang.ExceptionInInitializerError
+        at org.apache.storm.topology.TopologyBuilder.createTopology(TopologyBuilder.java:123)
+        at cn.xpleaf.bigdata.storm.statistic.StatisticTopology.main(StatisticTopology.java:29)
+Caused by: java.lang.RuntimeException: java.io.IOException: Found multiple defaults.yaml resources. You're probably bundling the Storm jars with your topology jar. [jar:file:/usr/local/storma.jar!/defaults.yaml, jar:file:/usr/local/storm/lib/storm-core-1.2.2.jar!/defaults.yaml]
+        at org.apache.storm.utils.Utils.findAndReadConfigFile(Utils.java:384)
+        at org.apache.storm.utils.Utils.readDefaultConfig(Utils.java:428)
+        at org.apache.storm.utils.Utils.readStormConfig(Utils.java:464)
+        at org.apache.storm.utils.Utils.<clinit>(Utils.java:178)
+        ... 2 more
+Caused by: java.io.IOException: Found multiple defaults.yaml resources. You're probably bundling the Storm jars with your topology jar. [jar:file:/usr/local/storma.jar!/defaults.yaml, jar:file:/usr/local/storm/lib/storm-core-1.2.2.jar!/defaults.yaml]
+        at org.apache.storm.utils.Utils.getConfigFileInputStream(Utils.java:410)
+        at org.apache.storm.utils.Utils.findAndReadConfigFile(Utils.java:363)
+        ... 5 more
+
+
+跑flume+conf1
+
+Info: Sourcing environment configuration script /usr/local/flume/conf/flume-env.sh
+Info: Including Hadoop libraries found via (/usr/local/hadoop/bin/hadoop) for HDFS access
+Info: Including Hive libraries found via () for Hive access
++ exec /usr/local/jdk1.8/bin/java -Xmx20m -cp '/usr/local/flume/conf:/usr/local/flume/lib/*:/usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/*:/usr/local/hadoop/share/hadoop/common/*:/usr/local/hadoop/share/hadoop/hdfs:/usr/local/hadoop/share/hadoop/hdfs/lib/*:/usr/local/hadoop/share/hadoop/hdfs/*:/usr/local/hadoop/share/hadoop/yarn/lib/*:/usr/local/hadoop/share/hadoop/yarn/*:/usr/local/hadoop/share/hadoop/mapreduce/lib/*:/usr/local/hadoop/share/hadoop/mapreduce/*:/usr/local/hadoop/contrib/capacity-scheduler/*.jar:/lib/*' -Djava.library.path=:/usr/local/hadoop/lib/native org.apache.flume.node.Application --conf-file flume-conf1.properties --name a1 --Dflume.root.logger=INFO,console
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/flume/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+跑storm
+"root", "topology.kryo.register" nil, "topology.kryo.decorators" (), "storm.id" "StatisticTopology-1-1533484179", "topology.name" "StatisticTopology"}
+8998 [main] INFO  o.a.s.d.nimbus - uploadedJar 
+9030 [ProcessThread(sid:0 cport:-1):] INFO  o.a.s.s.o.a.z.s.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x1650ac79bb80002 type:create cxid:0x9 zxid:0x25 txntype:-1 reqpath:n/a Error Path:/storm/blobstoremaxkeysequencenumber Error:KeeperErrorCode = NoNode for /storm/blobstoremaxkeysequencenumber
+9047 [main] INFO  o.a.s.cluster - setup-path/blobstore/StatisticTopology-1-1533484179-stormconf.ser/VM_166_186_centos:6627-1
+9143 [main] INFO  o.a.s.cluster - setup-path/blobstore/StatisticTopology-1-1533484179-stormcode.ser/VM_166_186_centos:6627-1
+9162 [main] INFO  o.a.s.d.nimbus - desired replication count 1 achieved, current-replication-count for conf key = 1, current-replication-count for code key = 1, current-replication-count for jar key = 1
+9236 [main] INFO  o.a.s.d.nimbus - Activating StatisticTopology: StatisticTopology-1-1533484179
+9466 [timer] INFO  o.a.s.s.EvenScheduler - Available slots: (["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1024] ["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1025] ["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1026] ["a602f6c5-c685-46bc-ad70-d6bbc24b6f05" 1027] ["a602f6c5-c685-46bc-ad70-d6bbc24b6f05" 1028] ["a602f6c5-c685-46bc-ad70-d6bbc24b6f05" 1029])
+9515 [timer] INFO  o.a.s.d.nimbus - Setting new assignment for topology id StatisticTopology-1-1533484179: #org.apache.storm.daemon.common.Assignment{:master-code-dir "/tmp/b0249579-fb11-4a00-8bac-a84304eac5c3", :node->host {"b573cfa6-a348-4bcf-9c77-1dc928ac2c62" "VM_166_186_centos"}, :executor->node+port {[4 4] ["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1024], [3 3] ["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1024], [2 2] ["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1024], [1 1] ["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1024]}, :executor->start-time-secs {[1 1] 1533484180, [2 2] 1533484180, [3 3] 1533484180, [4 4] 1533484180}, :worker->resources {["b573cfa6-a348-4bcf-9c77-1dc928ac2c62" 1024] [0.0 0.0 0.0]}, :owner "root"}
+9791 [SLOT_1024] INFO  o.a.s.d.s.Slot - STATE EMPTY msInState: 1010 -> WAITING_FOR_BASIC_LOCALIZATION msInState: 0
+9792 [Async Localizer] INFO  o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl - Starting
+9799 [Async Localizer] INFO  o.a.s.s.o.a.z.ZooKeeper - Initiating client connection, connectString=localhost:2000/storm sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@578f555b
+9800 [Async Localizer] INFO  o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl - Default schema
+9800 [Async Localizer] INFO  o.a.s.b.FileBlobStoreImpl - Creating new blob store based in /tmp/b0249579-fb11-4a00-8bac-a84304eac5c3/blobs
+9805 [Async Localizer-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Opening socket connection to server VM_166_186_centos/127.0.0.1:2000. Will not attempt to authenticate using SASL (unknown error)
+9806 [Async Localizer-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Socket connection established to VM_166_186_centos/127.0.0.1:2000, initiating session
+9806 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:38254
+9806 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:38254
+9819 [SyncThread:0] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Established session 0x1650ac79bb8000d with negotiated timeout 20000 for client /127.0.0.1:38254
+9819 [Async Localizer-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Session establishment complete on server VM_166_186_centos/127.0.0.1:2000, sessionid = 0x1650ac79bb8000d, negotiated timeout = 20000
+9819 [ProcessThread(sid:0 cport:-1):] INFO  o.a.s.s.o.a.z.s.PrepRequestProcessor - Processed session termination for sessionid: 0x1650ac79bb8000d
+9824 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.NIOServerCnxn - Closed socket connection for client /127.0.0.1:38254 which had sessionid 0x1650ac79bb8000d
+9825 [Async Localizer] INFO  o.a.s.s.o.a.z.ZooKeeper - Session: 0x1650ac79bb8000d closed
+9832 [Async Localizer-EventThread] INFO  o.a.s.s.o.a.z.ClientCnxn - EventThread shut down
+9906 [SLOT_1024] INFO  o.a.s.d.s.Slot - STATE WAITING_FOR_BASIC_LOCALIZATION msInState: 115 -> WAITING_FOR_BLOB_LOCALIZATION msInState: 0
+9914 [SLOT_1024] INFO  o.a.s.d.s.Container - Setting up b573cfa6-a348-4bcf-9c77-1dc928ac2c62:f5c5f123-9375-429d-990e-b2cfd509c405
+9973 [SLOT_1024] INFO  o.a.s.d.s.Container - GET worker-user for f5c5f123-9375-429d-990e-b2cfd509c405
+9988 [SLOT_1024] INFO  o.a.s.d.s.Container - SET worker-user f5c5f123-9375-429d-990e-b2cfd509c405 root
+10008 [SLOT_1024] INFO  o.a.s.d.worker - Launching worker for StatisticTopology-1-1533484179 on b573cfa6-a348-4bcf-9c77-1dc928ac2c62:1024 with id f5c5f123-9375-429d-990e-b2cfd509c405 and conf {"topology.builtin.metrics.bucket.size.secs" 60, "nimbus.childopts" "-Xmx1024m", "ui.filter.params" nil, "storm.cluster.mode" "local", "storm.messaging.netty.client_worker_threads" 1, "logviewer.max.per.worker.logs.size.mb" 2048, "supervisor.run.worker.as.user" false, "topology.max.task.parallelism" nil, "topology.priority" 29, "zmq.threads" 1, "storm.group.mapping.service" "org.apache.storm.security.auth.ShellBasedGroupsMapping", "transactional.zookeeper.root" "/transactional", "topology.sleep.spout.wait.strategy.time.ms" 1, "ui.pagination" 20, "scheduler.display.resource" false, "topology.max.replication.wait.time.sec" 60, "drpc.invocations.port" 3773, "supervisor.localizer.cache.target.size.mb" 10240, "topology.multilang.serializer" "org.apache.storm.multilang.JsonSerializer", "storm.messaging.netty.server_worker_threads" 1, "nimbus.blobstore.class" "org.apache.storm.blobstore.LocalFsBlobStore", "resource.aware.scheduler.eviction.strategy" "org.apache.storm.scheduler.resource.strategies.eviction.DefaultEvictionStrategy", "topology.max.error.report.per.interval" 5, "storm.thrift.transport" "org.apache.storm.security.auth.SimpleTransportPlugin", "zmq.hwm" 0, "storm.group.mapping.service.params" nil, "worker.profiler.enabled" false, "storm.principal.tolocal" "org.apache.storm.security.auth.DefaultPrincipalToLocal", "supervisor.worker.shutdown.sleep.secs" 3, "pacemaker.host" "localhost", "storm.zookeeper.retry.times" 5, "ui.actions.enabled" true, "zmq.linger.millis" 0, "supervisor.enable" true, "topology.stats.sample.rate" 0.05, "storm.nimbus.zookeeper.acls.fixup" true, "storm.messaging.netty.min_wait_ms" 100, "worker.log.level.reset.poll.secs" 30, "storm.zookeeper.port" 2000, "supervisor.heartbeat.frequency.secs" 5, "topology.enable.message.timeouts" true, "supervisor.cpu.capacity" 400.0, "drpc.worker.threads" 64, "supervisor.blobstore.download.thread.count" 5, "task.backpressure.poll.secs" 30, "drpc.queue.size" 128, "topology.backpressure.enable" false, "supervisor.blobstore.class" "org.apache.storm.blobstore.NimbusBlobStore", "storm.blobstore.inputstream.buffer.size.bytes" 65536, "topology.shellbolt.max.pending" 100, "drpc.https.keystore.password" "", "nimbus.code.sync.freq.secs" 120, "logviewer.port" 8000, "topology.scheduler.strategy" "org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy", "topology.executor.send.buffer.size" 1024, "resource.aware.scheduler.priority.strategy" "org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy", "pacemaker.auth.method" "NONE", "storm.daemon.metrics.reporter.plugins" ["org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter"], "topology.worker.logwriter.childopts" "-Xmx64m", "topology.spout.wait.strategy" "org.apache.storm.spout.SleepSpoutWaitStrategy", "ui.host" "0.0.0.0", "storm.nimbus.retry.interval.millis" 2000, "nimbus.inbox.jar.expiration.secs" 3600, "dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.acker.executors" nil, "topology.fall.back.on.java.serialization" true, "topology.eventlogger.executors" 0, "supervisor.localizer.cleanup.interval.ms" 600000, "storm.zookeeper.servers" ["localhost"], "nimbus.thrift.threads" 64, "logviewer.cleanup.age.mins" 10080, "topology.worker.childopts" nil, "topology.classpath" nil, "supervisor.monitor.frequency.secs" 3, "drpc.servers" ["localhost"], "nimbus.credential.renewers.freq.secs" 600, "backpressure.znode.timeout.secs" 30, "topology.skip.missing.kryo.registrations" true, "drpc.authorizer.acl.filename" "drpc-auth-acl.yaml", "pacemaker.kerberos.users" [], "storm.group.mapping.service.cache.duration.secs" 120, "blobstore.dir" "/tmp/b0249579-fb11-4a00-8bac-a84304eac5c3", "topology.testing.always.try.serialize" false, "nimbus.monitor.freq.secs" 10, "storm.health.check.timeout.ms" 5000, "supervisor.supervisors" [], "topology.tasks" nil, "topology.bolts.outgoing.overflow.buffer.enable" false, "storm.messaging.netty.socket.backlog" 500, "topology.workers" 1, "pacemaker.base.threads" 10, "storm.local.dir" "/tmp/8fadfe6b-278c-486c-93d6-eea90af53b75", "backpressure.znode.update.freq.secs" 15, "worker.childopts" "-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump", "storm.auth.simple-white-list.users" [], "topology.disruptor.batch.timeout.millis" 1, "topology.message.timeout.secs" 30, "topology.state.synchronization.timeout.secs" 60, "topology.tuple.serializer" "org.apache.storm.serialization.types.ListDelegateSerializer", "supervisor.supervisors.commands" [], "nimbus.blobstore.expiration.secs" 600, "logviewer.childopts" "-Xmx128m", "storm.nimbus.zookeeper.acls.check" true, "topology.environment" nil, "topology.debug" false, "topology.disruptor.batch.size" 100, "storm.disable.symlinks" false, "storm.messaging.netty.max_retries" 300, "ui.childopts" "-Xmx768m", "storm.network.topography.plugin" "org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping", "storm.zookeeper.session.timeout" 20000, "drpc.childopts" "-Xmx768m", "drpc.http.creds.plugin" "org.apache.storm.security.auth.DefaultHttpCredentialsPlugin", "storm.zookeeper.connection.timeout" 15000, "storm.zookeeper.auth.user" nil, "storm.meta.serialization.delegate" "org.apache.storm.serialization.GzipThriftSerializationDelegate", "topology.max.spout.pending" nil, "storm.codedistributor.class" "org.apache.storm.codedistributor.LocalFileSystemCodeDistributor", "nimbus.supervisor.timeout.secs" 60, "nimbus.task.timeout.secs" 30, "drpc.port" 3772, "pacemaker.max.threads" 50, "storm.zookeeper.retry.intervalceiling.millis" 30000, "nimbus.thrift.port" 6627, "storm.auth.simple-acl.admins" [], "topology.component.cpu.pcore.percent" 10.0, "supervisor.memory.capacity.mb" 3072.0, "storm.nimbus.retry.times" 5, "supervisor.worker.start.timeout.secs" 120, "storm.zookeeper.retry.interval" 1000, "logs.users" nil, "storm.cluster.metrics.consumer.publish.interval.secs" 60, "worker.profiler.command" "flight.bash", "transactional.zookeeper.port" nil, "drpc.max_buffer_size" 1048576, "pacemaker.thread.timeout" 10, "task.credentials.poll.secs" 30, "blobstore.superuser" "root", "drpc.https.keystore.type" "JKS", "topology.worker.receiver.thread.count" 1, "topology.state.checkpoint.interval.ms" 1000, "supervisor.slots.ports" (1024 1025 1026), "topology.transfer.buffer.size" 1024, "storm.health.check.dir" "healthchecks", "topology.worker.shared.thread.pool.size" 4, "drpc.authorizer.acl.strict" false, "nimbus.file.copy.expiration.secs" 600, "worker.profiler.childopts" "-XX:+UnlockCommercialFeatures -XX:+FlightRecorder", "topology.executor.receive.buffer.size" 1024, "backpressure.disruptor.low.watermark" 0.4, "nimbus.task.launch.secs" 120, "storm.local.mode.zmq" false, "storm.messaging.netty.buffer_size" 5242880, "storm.cluster.state.store" "org.apache.storm.cluster_state.zookeeper_state_factory", "worker.heartbeat.frequency.secs" 1, "storm.log4j2.conf.dir" "log4j2", "ui.http.creds.plugin" "org.apache.storm.security.auth.DefaultHttpCredentialsPlugin", "storm.zookeeper.root" "/storm", "topology.tick.tuple.freq.secs" nil, "drpc.https.port" -1, "storm.workers.artifacts.dir" "workers-artifacts", "supervisor.blobstore.download.max_retries" 3, "task.refresh.poll.secs" 10, "storm.exhibitor.port" 8080, "task.heartbeat.frequency.secs" 3, "pacemaker.port" 6699, "storm.messaging.netty.max_wait_ms" 1000, "topology.component.resources.offheap.memory.mb" 0.0, "drpc.http.port" 3774, "topology.error.throttle.interval.secs" 10, "storm.messaging.transport" "org.apache.storm.messaging.netty.Context", "topology.disable.loadaware.messaging" false, "storm.messaging.netty.authentication" false, "topology.component.resources.onheap.memory.mb" 128.0, "topology.kryo.factory" "org.apache.storm.serialization.DefaultKryoFactory", "worker.gc.childopts" "", "nimbus.topology.validator" "org.apache.storm.nimbus.DefaultTopologyValidator", "nimbus.seeds" ["localhost"], "nimbus.queue.size" 100000, "nimbus.cleanup.inbox.freq.secs" 600, "storm.blobstore.replication.factor" 3, "worker.heap.memory.mb" 768, "logviewer.max.sum.worker.logs.size.mb" 4096, "pacemaker.childopts" "-Xmx1024m", "ui.users" nil, "transactional.zookeeper.servers" nil, "supervisor.worker.timeout.secs" 30, "storm.zookeeper.auth.password" nil, "storm.blobstore.acl.validation.enabled" false, "client.blobstore.class" "org.apache.storm.blobstore.NimbusBlobStore", "storm.thrift.socket.timeout.ms" 600000, "supervisor.childopts" "-Xmx256m", "topology.worker.max.heap.size.mb" 768.0, "ui.http.x-frame-options" "DENY", "backpressure.disruptor.high.watermark" 0.9, "ui.filter" nil, "ui.header.buffer.bytes" 4096, "topology.min.replication.count" 1, "topology.disruptor.wait.timeout.millis" 1000, "storm.nimbus.retry.intervalceiling.millis" 60000, "topology.trident.batch.emit.interval.millis" 50, "storm.auth.simple-acl.users" [], "drpc.invocations.threads" 64, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "ui.port" 8080, "storm.exhibitor.poll.uripath" "/exhibitor/v1/cluster/list", "storm.messaging.netty.transfer.batch.size" 262144, "logviewer.appender.name" "A1", "nimbus.thrift.max_buffer_size" 1048576, "storm.auth.simple-acl.users.commands" [], "drpc.request.timeout.secs" 600}
+10021 [SLOT_1024] INFO  o.a.s.m.StormMetricRegistry - Starting metrics reporters...
+10025 [SLOT_1024] INFO  o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl - Starting
+10034 [SLOT_1024] INFO  o.a.s.s.o.a.z.ZooKeeper - Initiating client connection, connectString=localhost:2000 sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@1013cc40
+10036 [SLOT_1024] INFO  o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl - Default schema
+10036 [SLOT_1024-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Opening socket connection to server VM_166_186_centos/127.0.0.1:2000. Will not attempt to authenticate using SASL (unknown error)
+10036 [SLOT_1024-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Socket connection established to VM_166_186_centos/127.0.0.1:2000, initiating session
+10037 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:38256
+10037 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:38256
+10040 [SyncThread:0] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Established session 0x1650ac79bb8000e with negotiated timeout 20000 for client /127.0.0.1:38256
+10041 [SLOT_1024-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Session establishment complete on server VM_166_186_centos/127.0.0.1:2000, sessionid = 0x1650ac79bb8000e, negotiated timeout = 20000
+10041 [SLOT_1024-EventThread] INFO  o.a.s.s.o.a.c.f.s.ConnectionStateManager - State change: CONNECTED
+10041 [SLOT_1024-EventThread] INFO  o.a.s.zookeeper - Zookeeper state update: :connected:none
+10043 [Curator-Framework-0] INFO  o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl - backgroundOperationsLoop exiting
+10043 [ProcessThread(sid:0 cport:-1):] INFO  o.a.s.s.o.a.z.s.PrepRequestProcessor - Processed session termination for sessionid: 0x1650ac79bb8000e
+10045 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.NIOServerCnxn - Closed socket connection for client /127.0.0.1:38256 which had sessionid 0x1650ac79bb8000e
+10046 [SLOT_1024] INFO  o.a.s.s.o.a.z.ZooKeeper - Session: 0x1650ac79bb8000e closed
+10046 [SLOT_1024] INFO  o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl - Starting
+10046 [SLOT_1024-EventThread] INFO  o.a.s.s.o.a.z.ClientCnxn - EventThread shut down
+10051 [SLOT_1024] INFO  o.a.s.s.o.a.z.ZooKeeper - Initiating client connection, connectString=localhost:2000/storm sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@6ce46e9c
+10054 [SLOT_1024] INFO  o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl - Default schema
+10055 [SLOT_1024-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Opening socket connection to server VM_166_186_centos/127.0.0.1:2000. Will not attempt to authenticate using SASL (unknown error)
+10055 [SLOT_1024-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Socket connection established to VM_166_186_centos/127.0.0.1:2000, initiating session
+10055 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:38258
+10056 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:38258
+10063 [SyncThread:0] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Established session 0x1650ac79bb8000f with negotiated timeout 20000 for client /127.0.0.1:38258
+10063 [SLOT_1024-SendThread(VM_166_186_centos:2000)] INFO  o.a.s.s.o.a.z.ClientCnxn - Session establishment complete on server VM_166_186_centos/127.0.0.1:2000, sessionid = 0x1650ac79bb8000f, negotiated timeout = 20000
+10063 [SLOT_1024-EventThread] INFO  o.a.s.s.o.a.c.f.s.ConnectionStateManager - State change: CONNECTED
+10067 [SLOT_1024] INFO  o.a.s.s.a.AuthUtils - Got AutoCreds []
+10083 [SLOT_1024] INFO  o.a.s.d.worker - Reading Assignments.
+10215 [SLOT_1024] INFO  o.a.s.d.worker - Registering IConnectionCallbacks for b573cfa6-a348-4bcf-9c77-1dc928ac2c62:1024
+10301 [SLOT_1024] INFO  o.a.s.d.executor - Loading executor id_convertIp_bolt:[2 2]
+10337 [SLOT_1024] INFO  o.a.s.d.executor - Loaded executor tasks id_convertIp_bolt:[2 2]
+10682 [SLOT_1024] INFO  o.a.s.d.executor - Finished loading executor id_convertIp_bolt:[2 2]
+10692 [SLOT_1024] INFO  o.a.s.d.executor - Loading executor id_kafka_spout:[3 3]
+10694 [SLOT_1024] INFO  o.a.s.d.executor - Loaded executor tasks id_kafka_spout:[3 3]
+10722 [SLOT_1024] INFO  o.a.s.d.executor - Finished loading executor id_kafka_spout:[3 3]
+10728 [SLOT_1024] INFO  o.a.s.d.executor - Loading executor __acker:[1 1]
+10728 [SLOT_1024] INFO  o.a.s.d.executor - Loaded executor tasks __acker:[1 1]
+10752 [SLOT_1024] INFO  o.a.s.d.executor - Finished loading executor __acker:[1 1]
+10758 [SLOT_1024] INFO  o.a.s.d.executor - Loading executor __system:[-1 -1]
+10759 [SLOT_1024] INFO  o.a.s.d.executor - Loaded executor tasks __system:[-1 -1]
+10783 [SLOT_1024] INFO  o.a.s.d.executor - Finished loading executor __system:[-1 -1]
+10791 [SLOT_1024] INFO  o.a.s.d.executor - Loading executor id_statistic_bolt:[4 4]
+10824 [SLOT_1024] INFO  o.a.s.d.executor - Loaded executor tasks id_statistic_bolt:[4 4]
+10851 [SLOT_1024] INFO  o.a.s.d.executor - Finished loading executor id_statistic_bolt:[4 4]
+10861 [SLOT_1024] INFO  o.a.s.d.worker - Started with log levels: {"" #object[org.apache.logging.log4j.Level 0x5a394096 "INFO"], "org.apache.zookeeper" #object[org.apache.logging.log4j.Level 0x7951fc23 "WARN"]}
+10889 [SLOT_1024] INFO  o.a.s.d.worker - Worker has topology config {"topology.builtin.metrics.bucket.size.secs" 60, "nimbus.childopts" "-Xmx1024m", "ui.filter.params" nil, "storm.cluster.mode" "local", "storm.messaging.netty.client_worker_threads" 1, "logviewer.max.per.worker.logs.size.mb" 2048, "supervisor.run.worker.as.user" false, "topology.max.task.parallelism" nil, "topology.priority" 29, "zmq.threads" 1, "storm.group.mapping.service" "org.apache.storm.security.auth.ShellBasedGroupsMapping", "transactional.zookeeper.root" "/transactional", "topology.sleep.spout.wait.strategy.time.ms" 1, "ui.pagination" 20, "scheduler.display.resource" false, "topology.max.replication.wait.time.sec" 60, "drpc.invocations.port" 3773, "supervisor.localizer.cache.target.size.mb" 10240, "topology.multilang.serializer" "org.apache.storm.multilang.JsonSerializer", "storm.messaging.netty.server_worker_threads" 1, "nimbus.blobstore.class" "org.apache.storm.blobstore.LocalFsBlobStore", "resource.aware.scheduler.eviction.strategy" "org.apache.storm.scheduler.resource.strategies.eviction.DefaultEvictionStrategy", "topology.max.error.report.per.interval" 5, "storm.thrift.transport" "org.apache.storm.security.auth.SimpleTransportPlugin", "zmq.hwm" 0, "storm.group.mapping.service.params" nil, "worker.profiler.enabled" false, "storm.principal.tolocal" "org.apache.storm.security.auth.DefaultPrincipalToLocal", "supervisor.worker.shutdown.sleep.secs" 3, "pacemaker.host" "localhost", "storm.zookeeper.retry.times" 5, "ui.actions.enabled" true, "zmq.linger.millis" 0, "supervisor.enable" true, "topology.stats.sample.rate" 0.05, "storm.nimbus.zookeeper.acls.fixup" true, "storm.messaging.netty.min_wait_ms" 100, "worker.log.level.reset.poll.secs" 30, "storm.zookeeper.port" 2000, "supervisor.heartbeat.frequency.secs" 5, "topology.enable.message.timeouts" true, "supervisor.cpu.capacity" 400.0, "drpc.worker.threads" 64, "supervisor.blobstore.download.thread.count" 5, "task.backpressure.poll.secs" 30, "drpc.queue.size" 128, "topology.backpressure.enable" false, "supervisor.blobstore.class" "org.apache.storm.blobstore.NimbusBlobStore", "storm.blobstore.inputstream.buffer.size.bytes" 65536, "topology.shellbolt.max.pending" 100, "drpc.https.keystore.password" "", "nimbus.code.sync.freq.secs" 120, "logviewer.port" 8000, "topology.scheduler.strategy" "org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy", "topology.executor.send.buffer.size" 1024, "resource.aware.scheduler.priority.strategy" "org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy", "pacemaker.auth.method" "NONE", "storm.daemon.metrics.reporter.plugins" ["org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter"], "topology.worker.logwriter.childopts" "-Xmx64m", "topology.spout.wait.strategy" "org.apache.storm.spout.SleepSpoutWaitStrategy", "ui.host" "0.0.0.0", "topology.submitter.principal" "", "storm.nimbus.retry.interval.millis" 2000, "nimbus.inbox.jar.expiration.secs" 3600, "dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.acker.executors" nil, "topology.fall.back.on.java.serialization" true, "topology.eventlogger.executors" 0, "supervisor.localizer.cleanup.interval.ms" 600000, "storm.zookeeper.servers" ["localhost"], "nimbus.thrift.threads" 64, "logviewer.cleanup.age.mins" 10080, "topology.worker.childopts" nil, "topology.classpath" nil, "supervisor.monitor.frequency.secs" 3, "drpc.servers" ["localhost"], "nimbus.credential.renewers.freq.secs" 600, "backpressure.znode.timeout.secs" 30, "topology.skip.missing.kryo.registrations" true, "drpc.authorizer.acl.filename" "drpc-auth-acl.yaml", "pacemaker.kerberos.users" [], "storm.group.mapping.service.cache.duration.secs" 120, "blobstore.dir" "/tmp/b0249579-fb11-4a00-8bac-a84304eac5c3", "topology.testing.always.try.serialize" false, "nimbus.monitor.freq.secs" 10, "storm.health.check.timeout.ms" 5000, "supervisor.supervisors" [], "topology.tasks" nil, "topology.bolts.outgoing.overflow.buffer.enable" false, "storm.messaging.netty.socket.backlog" 500, "topology.workers" 1, "pacemaker.base.threads" 10, "storm.local.dir" "/tmp/b0249579-fb11-4a00-8bac-a84304eac5c3", "backpressure.znode.update.freq.secs" 15, "worker.childopts" "-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump", "storm.auth.simple-white-list.users" [], "topology.disruptor.batch.timeout.millis" 1, "topology.message.timeout.secs" 30, "topology.state.synchronization.timeout.secs" 60, "topology.tuple.serializer" "org.apache.storm.serialization.types.ListDelegateSerializer", "supervisor.supervisors.commands" [], "nimbus.blobstore.expiration.secs" 600, "logviewer.childopts" "-Xmx128m", "storm.nimbus.zookeeper.acls.check" true, "topology.environment" nil, "topology.debug" false, "topology.disruptor.batch.size" 100, "storm.disable.symlinks" false, "storm.messaging.netty.max_retries" 300, "ui.childopts" "-Xmx768m", "storm.network.topography.plugin" "org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping", "storm.zookeeper.session.timeout" 20000, "drpc.childopts" "-Xmx768m", "drpc.http.creds.plugin" "org.apache.storm.security.auth.DefaultHttpCredentialsPlugin", "storm.zookeeper.connection.timeout" 15000, "storm.zookeeper.auth.user" nil, "storm.meta.serialization.delegate" "org.apache.storm.serialization.GzipThriftSerializationDelegate", "topology.max.spout.pending" nil, "storm.codedistributor.class" "org.apache.storm.codedistributor.LocalFileSystemCodeDistributor", "nimbus.supervisor.timeout.secs" 60, "nimbus.task.timeout.secs" 30, "storm.zookeeper.superACL" nil, "drpc.port" 3772, "pacemaker.max.threads" 50, "storm.zookeeper.retry.intervalceiling.millis" 30000, "nimbus.thrift.port" 6627, "storm.auth.simple-acl.admins" [], "topology.component.cpu.pcore.percent" 10.0, "supervisor.memory.capacity.mb" 3072.0, "storm.nimbus.retry.times" 5, "supervisor.worker.start.timeout.secs" 120, "storm.zookeeper.retry.interval" 1000, "logs.users" nil, "storm.cluster.metrics.consumer.publish.interval.secs" 60, "worker.profiler.command" "flight.bash", "transactional.zookeeper.port" nil, "drpc.max_buffer_size" 1048576, "pacemaker.thread.timeout" 10, "task.credentials.poll.secs" 30, "blobstore.superuser" "root", "drpc.https.keystore.type" "JKS", "topology.worker.receiver.thread.count" 1, "topology.state.checkpoint.interval.ms" 1000, "supervisor.slots.ports" [6700 6701 6702 6703], "topology.transfer.buffer.size" 1024, "storm.health.check.dir" "healthchecks", "topology.worker.shared.thread.pool.size" 4, "drpc.authorizer.acl.strict" false, "nimbus.file.copy.expiration.secs" 600, "worker.profiler.childopts" "-XX:+UnlockCommercialFeatures -XX:+FlightRecorder", "topology.executor.receive.buffer.size" 1024, "backpressure.disruptor.low.watermark" 0.4, "topology.users" [], "nimbus.task.launch.secs" 120, "storm.local.mode.zmq" false, "storm.messaging.netty.buffer_size" 5242880, "storm.cluster.state.store" "org.apache.storm.cluster_state.zookeeper_state_factory", "worker.heartbeat.frequency.secs" 1, "storm.log4j2.conf.dir" "log4j2", "ui.http.creds.plugin" "org.apache.storm.security.auth.DefaultHttpCredentialsPlugin", "storm.zookeeper.root" "/storm", "topology.submitter.user" "root", "topology.tick.tuple.freq.secs" nil, "drpc.https.port" -1, "storm.workers.artifacts.dir" "workers-artifacts", "supervisor.blobstore.download.max_retries" 3, "task.refresh.poll.secs" 10, "storm.exhibitor.port" 8080, "task.heartbeat.frequency.secs" 3, "pacemaker.port" 6699, "storm.messaging.netty.max_wait_ms" 1000, "topology.component.resources.offheap.memory.mb" 0.0, "drpc.http.port" 3774, "topology.error.throttle.interval.secs" 10, "storm.messaging.transport" "org.apache.storm.messaging.netty.Context", "topology.disable.loadaware.messaging" false, "storm.messaging.netty.authentication" false, "topology.component.resources.onheap.memory.mb" 128.0, "topology.kryo.factory" "org.apache.storm.serialization.DefaultKryoFactory", "topology.kryo.register" nil, "worker.gc.childopts" "", "nimbus.topology.validator" "org.apache.storm.nimbus.DefaultTopologyValidator", "nimbus.seeds" ["localhost"], "nimbus.queue.size" 100000, "nimbus.cleanup.inbox.freq.secs" 600, "storm.blobstore.replication.factor" 3, "worker.heap.memory.mb" 768, "logviewer.max.sum.worker.logs.size.mb" 4096, "pacemaker.childopts" "-Xmx1024m", "ui.users" nil, "transactional.zookeeper.servers" nil, "supervisor.worker.timeout.secs" 30, "storm.zookeeper.auth.password" nil, "storm.blobstore.acl.validation.enabled" false, "client.blobstore.class" "org.apache.storm.blobstore.NimbusBlobStore", "storm.thrift.socket.timeout.ms" 600000, "supervisor.childopts" "-Xmx256m", "topology.worker.max.heap.size.mb" 768.0, "ui.http.x-frame-options" "DENY", "backpressure.disruptor.high.watermark" 0.9, "ui.filter" nil, "ui.header.buffer.bytes" 4096, "topology.min.replication.count" 1, "topology.disruptor.wait.timeout.millis" 1000, "storm.nimbus.retry.intervalceiling.millis" 60000, "topology.trident.batch.emit.interval.millis" 50, "storm.auth.simple-acl.users" [], "drpc.invocations.threads" 64, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "ui.port" 8080, "topology.kryo.decorators" [], "storm.id" "StatisticTopology-1-1533484179", "topology.name" "StatisticTopology", "storm.exhibitor.poll.uripath" "/exhibitor/v1/cluster/list", "storm.messaging.netty.transfer.batch.size" 262144, "logviewer.appender.name" "A1", "nimbus.thrift.max_buffer_size" 1048576, "storm.auth.simple-acl.users.commands" [], "drpc.request.timeout.secs" 600}
+10890 [SLOT_1024] INFO  o.a.s.d.worker - Worker f5c5f123-9375-429d-990e-b2cfd509c405 for storm StatisticTopology-1-1533484179 on b573cfa6-a348-4bcf-9c77-1dc928ac2c62:1024 has finished loading
+10890 [SLOT_1024] INFO  o.a.s.d.s.Container - SET worker-user f5c5f123-9375-429d-990e-b2cfd509c405 root
+10891 [SLOT_1024] INFO  o.a.s.d.s.Slot - STATE WAITING_FOR_BLOB_LOCALIZATION msInState: 985 -> WAITING_FOR_WORKER_START msInState: 0 topo:StatisticTopology-1-1533484179 worker:f5c5f123-9375-429d-990e-b2cfd509c405
+10891 [SLOT_1024] INFO  o.a.s.d.s.Slot - SLOT 1024: Changing current assignment from null to LocalAssignment(topology_id:StatisticTopology-1-1533484179, executors:[ExecutorInfo(task_start:4, task_end:4), ExecutorInfo(task_start:3, task_end:3), ExecutorInfo(task_start:2, task_end:2), ExecutorInfo(task_start:1, task_end:1)], resources:WorkerResources(mem_on_heap:0.0, mem_off_heap:0.0, cpu:0.0), owner:root)
+10894 [SLOT_1024] INFO  o.a.s.d.s.Slot - STATE WAITING_FOR_WORKER_START msInState: 3 topo:StatisticTopology-1-1533484179 worker:f5c5f123-9375-429d-990e-b2cfd509c405 -> RUNNING msInState: 0 topo:StatisticTopology-1-1533484179 worker:f5c5f123-9375-429d-990e-b2cfd509c405
+11186 [refresh-active-timer] INFO  o.a.s.d.worker - All connections are ready for worker b573cfa6-a348-4bcf-9c77-1dc928ac2c62:1024 with id f5c5f123-9375-429d-990e-b2cfd509c405
+11207 [Thread-18-id_convertIp_bolt-executor[2 2]] INFO  o.a.s.d.executor - Preparing bolt id_convertIp_bolt:(2)
+11227 [Thread-18-id_convertIp_bolt-executor[2 2]] INFO  o.a.s.d.executor - Prepared bolt id_convertIp_bolt:(2)
+11228 [Thread-24-__system-executor[-1 -1]] INFO  o.a.s.d.executor - Preparing bolt __system:(-1)
+11230 [Thread-24-__system-executor[-1 -1]] INFO  o.a.s.d.executor - Prepared bolt __system:(-1)
+11260 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.d.executor - Opening spout id_kafka_spout:(3)
+11277 [Thread-26-id_statistic_bolt-executor[4 4]] INFO  o.a.s.d.executor - Preparing bolt id_statistic_bolt:(4)
+11277 [Thread-26-id_statistic_bolt-executor[4 4]] INFO  o.a.s.d.executor - Prepared bolt id_statistic_bolt:(4)
+11289 [Thread-22-__acker-executor[1 1]] INFO  o.a.s.d.executor - Preparing bolt __acker:(1)
+11290 [Thread-22-__acker-executor[1 1]] INFO  o.a.s.d.executor - Prepared bolt __acker:(1)
+11711 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.c.f.i.CuratorFrameworkImpl - Starting
+11821 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.c.f.i.CuratorFrameworkImpl - Starting
+11970 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:38264
+11971 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:38264
+11983 [SyncThread:0] INFO  o.a.s.s.o.a.z.s.ZooKeeperServer - Established session 0x1650ac79bb80010 with negotiated timeout 20000 for client /127.0.0.1:38264
+11988 [Thread-20-id_kafka_spout-executor[3 3]-EventThread] INFO  o.a.c.f.s.ConnectionStateManager - State change: CONNECTED
+12024 [Thread-20-id_kafka_spout-executor[3 3]-EventThread] INFO  o.a.c.f.s.ConnectionStateManager - State change: CONNECTED
+12139 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.DynamicBrokersReader - Read partition info from zookeeper: GlobalPartitionInformation{topic=f-k-s, partitionMap={0=119.29.108.156:9092}}
+12140 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.c.f.i.CuratorFrameworkImpl - Starting
+12144 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.d.executor - Opened spout id_kafka_spout:(3)
+12146 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.d.executor - Activating spout id_kafka_spout:(3)
+12146 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.ZkCoordinator - Task [1/1] Refreshing partition manager connections
+12154 [Thread-20-id_kafka_spout-executor[3 3]-EventThread] INFO  o.a.c.f.s.ConnectionStateManager - State change: CONNECTED
+12157 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.DynamicBrokersReader - Read partition info from zookeeper: GlobalPartitionInformation{topic=f-k-s, partitionMap={0=119.29.108.156:9092}}
+12157 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.KafkaUtils - Task [1/1] assigned [Partition{host=119.29.108.156:9092, topic=f-k-s, partition=0}]
+12158 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.ZkCoordinator - Task [1/1] Deleted partition managers: []
+12158 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.ZkCoordinator - Task [1/1] New partition managers: [Partition{host=119.29.108.156:9092, topic=f-k-s, partition=0}]
+12518 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.PartitionManager - Read partition information from: /f-k-s/consumer-id/partition_0  --> null
+12646 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.PartitionManager - No partition information found, using configuration to determine offset
+12647 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.PartitionManager - Starting Kafka 119.29.108.156 Partition{host=119.29.108.156:9092, topic=f-k-s, partition=0} from offset 49918
+12647 [Thread-20-id_kafka_spout-executor[3 3]] INFO  o.a.s.k.ZkCoordinator - Task [1/1] Finished refreshing
+14941 [ProcessThread(sid:0 cport:-1):] INFO  o.a.s.s.o.a.z.s.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x1650ac79bb80010 type:create cxid:0x3 zxid:0x3f txntype:-1 reqpath:n/a Error Path:/f-k-s/consumer-id Error:KeeperErrorCode = NoNode for /f-k-s/consumer-id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+跑hbase插入数据时：
+18/08/10 13:54:02 ERROR client.AsyncProcess: Failed to get region location 
+org.apache.hadoop.hbase.exceptions.UnknownProtocolException: org.apache.hadoop.hbase.exceptions.UnknownProtocolException: Is this a pre-hbase-1.0.0 or asynchbase client? Client is invoking getClosestRowBefore removed in hbase-2.0.0 replaced by reverse Scan.
+        at org.apache.hadoop.hbase.regionserver.RSRpcServices.get(RSRpcServices.java:2438)
+        at org.apache.hadoop.hbase.shaded.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:41998)
+        at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:409)
+        at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:130)
+        at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:324)
+        at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:304)
+
+        at sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:106)
+        at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:95)
+        at org.apache.hadoop.hbase.protobuf.ProtobufUtil.getRemoteException(ProtobufUtil.java:326)
+        at org.apache.hadoop.hbase.protobuf.ProtobufUtil.getRowOrBefore(ProtobufUtil.java:1584)
+        at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1294)
+        at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1126)
+        at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:369)
+        at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:320)
+        at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:206)
+        at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:183)
+        at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1482)
+        at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1095)
+        at cn.orcale.com.bigdata.hbase.HbaseDao.insertData(HbaseDao.java:106)
+        at cn.orcale.com.bigdata.hbase.HbaseDao.main(HbaseDao.java:47)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:58)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: org.apache.hadoop.hbase.ipc.RemoteWithExtrasException(org.apache.hadoop.hbase.exceptions.UnknownProtocolException): org.apache.hadoop.hbase.exceptions.UnknownProtocolException: Is this a pre-hbase-1.0.0 or asynchbase client? Client is invoking getClosestRowBefore removed in hbase-2.0.0 replaced by reverse Scan.
+        at org.apache.hadoop.hbase.regionserver.RSRpcServices.get(RSRpcServices.java:2438)
+        at org.apache.hadoop.hbase.shaded.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:41998)
+        at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:409)
+        at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:130)
+        at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:324)
+        at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:304)
+
+        at org.apache.hadoop.hbase.ipc.RpcClientImpl.call(RpcClientImpl.java:1200)
+        at org.apache.hadoop.hbase.ipc.AbstractRpcClient.callBlockingMethod(AbstractRpcClient.java:216)
+        at org.apache.hadoop.hbase.ipc.AbstractRpcClient$BlockingRpcChannelImplementation.callBlockingMethod(AbstractRpcClient.java:300)
+        at org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$BlockingStub.get(ClientProtos.java:31865)
+        at org.apache.hadoop.hbase.protobuf.ProtobufUtil.getRowOrBefore(ProtobufUtil.java:1580)
+        ... 21 more
+org.apache.hadoop.hbase.client.RetriesExhaustedWithDetailsException: Failed 1 action: org.apache.hadoop.hbase.exceptions.UnknownProtocolException: Is this a pre-hbase-1.0.0 or asynchbase client? Client is invoking getClosestRowBefore removed in hbase-2.0.0 replaced by reverse Scan.
+        at org.apache.hadoop.hbase.regionserver.RSRpcServices.get(RSRpcServices.java:2438)
+        at org.apache.hadoop.hbase.shaded.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:41998)
+        at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:409)
+        at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:130)
+        at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:324)
+        at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:304)
+: 1 time, 
+        at org.apache.hadoop.hbase.client.AsyncProcess$BatchErrors.makeException(AsyncProcess.java:227)
+        at org.apache.hadoop.hbase.client.AsyncProcess$BatchErrors.access$1700(AsyncProcess.java:207)
+        at org.apache.hadoop.hbase.client.AsyncProcess.waitForAllPreviousOpsAndReset(AsyncProcess.java:1658)
+        at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:208)
+        at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:183)
+        at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1482)
+        at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1095)
+        at cn.orcale.com.bigdata.hbase.HbaseDao.insertData(HbaseDao.java:106)
+        at cn.orcale.com.bigdata.hbase.HbaseDao.main(HbaseDao.java:47)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:58)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+跑hive创建数据库时候：server那边的报错
+2018-08-14 13:18:13: Starting Hive Metastore Server
+MetaException(message:Version information not found in metastore. )
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:83)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: MetaException(message:Version information not found in metastore. )
+        at org.apache.hadoop.hive.metastore.ObjectStore.checkSchema(ObjectStore.java:7564)
+        at org.apache.hadoop.hive.metastore.ObjectStore.verifySchema(ObjectStore.java:7542)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.invoke(RawStoreProxy.java:101)
+        at com.sun.proxy.$Proxy23.verifySchema(Unknown Source)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:591)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:651)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        ... 11 more
+Exception in thread "main" MetaException(message:Version information not found in metastore. )
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:83)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: MetaException(message:Version information not found in metastore. )
+        at org.apache.hadoop.hive.metastore.ObjectStore.checkSchema(ObjectStore.java:7564)
+        at org.apache.hadoop.hive.metastore.ObjectStore.verifySchema(ObjectStore.java:7542)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.invoke(RawStoreProxy.java:101)
+        at com.sun.proxy.$Proxy23.verifySchema(Unknown Source)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:591)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:651)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        ... 11 more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+这次启动hive server：
+ at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        ... 68 more
+Caused by: java.sql.SQLException: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+        ... 65 more
+Caused by: ERROR XSDB6: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(Unknown Source)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.raw.RawStore.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+        ... 65 more
+------
+)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:211)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        ... 11 more
+Caused by: javax.jdo.JDOFatalDataStoreException: Unable to open a test connection to the given database. JDBC url = jdbc:derby:;databaseName=metastore_db;create=true, username = APP. Terminating connection pool (set lazyInit to true if you expect to start your database after your app). Original Exception: ------
+java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+        at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+        at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+        at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+        at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor84.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        ... 68 more
+Caused by: java.sql.SQLException: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+        ... 65 more
+Caused by: ERROR XSDB6: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(Unknown Source)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.raw.RawStore.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+        ... 65 more
+------
+
+NestedThrowables:
+java.sql.SQLException: Unable to open a test connection to the given database. JDBC url = jdbc:derby:;databaseName=metastore_db;create=true, username = APP. Terminating connection pool (set lazyInit to true if you expect to start your database after your app). Original Exception: ------
+java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+        at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+        at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+        at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+        at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor84.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        ... 68 more
+Caused by: java.sql.SQLException: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+        ... 65 more
+Caused by: ERROR XSDB6: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(Unknown Source)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.raw.RawStore.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+        ... 65 more
+------
+
+        at org.datanucleus.api.jdo.NucleusJDOHelper.getJDOExceptionForNucleusException(NucleusJDOHelper.java:529)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:830)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        ... 13 more
+Caused by: java.sql.SQLException: Unable to open a test connection to the given database. JDBC url = jdbc:derby:;databaseName=metastore_db;create=true, username = APP. Terminating connection pool (set lazyInit to true if you expect to start your database after your app). Original Exception: ------
+java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+        at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+        at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+        at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+        at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor84.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        ... 68 more
+Caused by: java.sql.SQLException: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+        ... 65 more
+Caused by: ERROR XSDB6: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(Unknown Source)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.raw.RawStore.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+        ... 65 more
+------
+
+        at sun.reflect.GeneratedConstructorAccessor86.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.jolbox.bonecp.PoolUtil.generateSQLException(PoolUtil.java:192)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:422)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor84.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        ... 43 more
+Caused by: java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+        at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+        at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+        at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+        at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+        at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        ... 54 more
+Caused by: java.sql.SQLException: Failed to start database 'metastore_db' with class loader sun.misc.Launcher$AppClassLoader@5f150435, see the next exception for details.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        ... 68 more
+Caused by: java.sql.SQLException: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+        at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+        at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+        ... 65 more
+Caused by: ERROR XSDB6: Another instance of Derby may have already booted the database /root/metastore_db.
+        at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(Unknown Source)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(Unknown Source)
+        at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.raw.RawStore.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+        at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+        at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+        at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+        at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+        ... 65 more
+
+
+
+
+
+hive server时：
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:952)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:822)
+        ... 61 more
+Caused by: java.net.UnknownHostException: hadoop
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:150)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+        ... 64 more
+------
+)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:83)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: MetaException(message:Unable to open a test connection to the given database. JDBC url = jdbc:mysql://hadoop:3306/hive?createDatabaseIfNotExist=true, username = APP. Terminating connection pool (set lazyInit to true if you expect to start your database after your app). Original Exception: ------
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:832)
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor76.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:952)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:822)
+        ... 61 more
+Caused by: java.net.UnknownHostException: hadoop
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:150)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+        ... 64 more
+------
+)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:211)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        ... 11 more
+Caused by: javax.jdo.JDOFatalDataStoreException: Unable to open a test connection to the given database. JDBC url = jdbc:mysql://hadoop:3306/hive?createDatabaseIfNotExist=true, username = APP. Terminating connection pool (set lazyInit to true if you expect to start your database after your app). Original Exception: ------
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:832)
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor76.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:952)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:822)
+        ... 61 more
+Caused by: java.net.UnknownHostException: hadoop
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:150)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+        ... 64 more
+------
+
+NestedThrowables:
+java.sql.SQLException: Unable to open a test connection to the given database. JDBC url = jdbc:mysql://hadoop:3306/hive?createDatabaseIfNotExist=true, username = APP. Terminating connection pool (set lazyInit to true if you expect to start your database after your app). Original Exception: ------
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:832)
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor76.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:952)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:822)
+        ... 61 more
+Caused by: java.net.UnknownHostException: hadoop
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:150)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+        ... 64 more
+------
+
+        at org.datanucleus.api.jdo.NucleusJDOHelper.getJDOExceptionForNucleusException(NucleusJDOHelper.java:529)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:830)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        ... 13 more
+Caused by: java.sql.SQLException: Unable to open a test connection to the given database. JDBC url = jdbc:mysql://hadoop:3306/hive?createDatabaseIfNotExist=true, username = APP. Terminating connection pool (set lazyInit to true if you expect to start your database after your app). Original Exception: ------
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:832)
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor76.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.createPersistenceManagerFactory(JDOPersistenceManagerFactory.java:334)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.getPersistenceManagerFactory(JDOPersistenceManagerFactory.java:213)
+        at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at javax.jdo.JDOHelper$16.run(JDOHelper.java:1965)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.jdo.JDOHelper.invoke(JDOHelper.java:1960)
+        at javax.jdo.JDOHelper.invokeGetPersistenceManagerFactoryOnImplementation(JDOHelper.java:1166)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:808)
+        at javax.jdo.JDOHelper.getPersistenceManagerFactory(JDOHelper.java:701)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPMF(ObjectStore.java:519)
+        at org.apache.hadoop.hive.metastore.ObjectStore.getPersistenceManager(ObjectStore.java:548)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initializeHelper(ObjectStore.java:403)
+        at org.apache.hadoop.hive.metastore.ObjectStore.initialize(ObjectStore.java:340)
+        at org.apache.hadoop.hive.metastore.ObjectStore.setConf(ObjectStore.java:301)
+        at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+        at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.<init>(RawStoreProxy.java:58)
+        at org.apache.hadoop.hive.metastore.RawStoreProxy.getProxy(RawStoreProxy.java:67)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.newRawStoreForConf(HiveMetaStore.java:624)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMSForConf(HiveMetaStore.java:590)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.getMS(HiveMetaStore.java:584)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultDB(HiveMetaStore.java:655)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:427)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:79)
+        at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:92)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6887)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6882)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.startMetaStore(HiveMetaStore.java:7140)
+        at org.apache.hadoop.hive.metastore.HiveMetaStore.main(HiveMetaStore.java:7067)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:952)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:822)
+        ... 61 more
+Caused by: java.net.UnknownHostException: hadoop
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:150)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+        ... 64 more
+------
+
+        at sun.reflect.GeneratedConstructorAccessor78.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.jolbox.bonecp.PoolUtil.generateSQLException(PoolUtil.java:192)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:422)
+        at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+        at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:483)
+        at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:297)
+        at sun.reflect.GeneratedConstructorAccessor76.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+        at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+        at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:133)
+        at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:422)
+        at org.datanucleus.api.jdo.JDOPersistenceManagerFactory.freezeConfiguration(JDOPersistenceManagerFactory.java:817)
+        ... 43 more
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:832)
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:208)
+        at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:361)
+        at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416)
+        ... 54 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:952)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:822)
+        ... 61 more
+Caused by: java.net.UnknownHostException: hadoop
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:150)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+        ... 64 more
+
+
+
+
+
+
+
+
+
+
+跑hivesever2的时候：
+ Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+跑hiveserver2：
+
+2018-08-14 15:16:25: Starting HiveServer2
+[Fatal Error] hive-site.xml:30:73: The entity name must immediately follow the '&' in the entity reference.
+Exception in thread "main" java.lang.RuntimeException: org.xml.sax.SAXParseException; systemId: file:/usr/local/hive/conf/hive-site.xml; lineNumber: 30; columnNumber: 73; The entity name must immediately follow the '&' in the entity reference.
+        at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2728)
+        at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:2574)
+        at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:2477)
+        at org.apache.hadoop.conf.Configuration.get(Configuration.java:1302)
+        at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:3904)
+        at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:3973)
+        at org.apache.hadoop.hive.conf.HiveConf.initialize(HiveConf.java:4060)
+        at org.apache.hadoop.hive.conf.HiveConf.<init>(HiveConf.java:4003)
+        at org.apache.hadoop.hive.common.LogUtils.initHiveLog4jCommon(LogUtils.java:81)
+        at org.apache.hadoop.hive.common.LogUtils.initHiveLog4j(LogUtils.java:65)
+        at org.apache.hive.service.server.HiveServer2.main(HiveServer2.java:716)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: org.xml.sax.SAXParseException; systemId: file:/usr/local/hive/conf/hive-site.xml; lineNumber: 30; columnNumber: 73; The entity name must immediately follow the '&' in the entity reference.
+        at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+        at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+        at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:150)
+        at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2552)
+        at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2540)
+        at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2611)
+        ... 16 more
+
+
+
+hiveserver2：
+[Fatal Error] hive-site.xml:30:79: The reference to entity "useSSL" must end with the ';' delimiter.
+Exception in thread "main" java.lang.RuntimeException: org.xml.sax.SAXParseException; systemId: file:/usr/local/hive/conf/hive-site.xml; lineNumber: 30; columnNumber: 79; The reference to entity "useSSL" must end with the ';' delimiter.
+        at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2728)
+        at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:2574)
+        at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:2477)
+        at org.apache.hadoop.conf.Configuration.get(Configuration.java:1302)
+        at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:3904)
+        at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:3973)
+        at org.apache.hadoop.hive.conf.HiveConf.initialize(HiveConf.java:4060)
+        at org.apache.hadoop.hive.conf.HiveConf.<init>(HiveConf.java:4003)
+        at org.apache.hadoop.hive.common.LogUtils.initHiveLog4jCommon(LogUtils.java:81)
+        at org.apache.hadoop.hive.common.LogUtils.initHiveLog4j(LogUtils.java:65)
+        at org.apache.hive.service.server.HiveServer2.main(HiveServer2.java:716)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: org.xml.sax.SAXParseException; systemId: file:/usr/local/hive/conf/hive-site.xml; lineNumber: 30; columnNumber: 79; The reference to entity "useSSL" must end with the ';' delimiter.
+        at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+        at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+        at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:150)
+        at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2552)
+        at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2540)
+        at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2611)
+        ... 16 more
